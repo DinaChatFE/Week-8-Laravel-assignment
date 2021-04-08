@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Notifications\MakeNotification;
+
 class HomeController extends Controller
 {
     /**
@@ -21,6 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index');
+        return view('index', ['authId' => auth()->user()]);
+    }
+    public function send_notification($id)
+    {
+        $user = User::findOrFail($id);
+        $user->notify(new MakeNotification($user->email));
+        dd('Mail sending');
     }
 }

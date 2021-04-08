@@ -3,18 +3,22 @@
 @section('content')
   <!-- Page Header -->
   <header class="masthead" style="background-image: url('img/home-bg.jpg'); margin-top: -25px; z-index: -2;">
-    <div class="overlay"></div>
-    <div class="container">
+    <div class="overlay" style="z-index: -2"></div>
+    <div class="container" style="z-index: -2">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
             <h1>Clean Blog</h1>
             <span class="subheading">A Blog Theme by Start Bootstrap</span>
+           
           </div>
         </div>
       </div>
     </div>
   </header>
+  <div class="d-flex justify-content-center">
+    <a class="btn btn-primary m-3" style="z-index: 100;" href="{{ url('/send-notification/'. $authId->id ) }}">Send Email from {{ $authId->email }} to admin</a>
+  </div>
   <!-- Main Content -->
   <div class="container">
     <div class="row">
@@ -74,7 +78,7 @@
         <hr>
         <!-- Pager -->
         <div class="clearfix">
-          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+          <a class="btn btn-primary float-right" href="#">Load more  &rarr;</a>
         </div>
       </div>
     </div>
