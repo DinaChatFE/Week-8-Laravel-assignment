@@ -83,13 +83,15 @@ return [
     |
      */
 
-    'stream' => [
-        'ssl' => [
-            'allow_self_signed' => true,
-            'verify_peer' => false,
-            'verify_peer_name' => false,
-        ],
-    ],
+    /* ===============Use Stream socket io with google email==============*/
+
+    // 'stream' => [
+    //     'ssl' => [
+    //         'allow_self_signed' => true,
+    //         'verify_peer' => false,
+    //         'verify_peer_name' => false,
+    //     ],
+    // ],
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'dinachatfe5@@gmail.com'),

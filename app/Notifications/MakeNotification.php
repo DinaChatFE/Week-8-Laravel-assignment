@@ -42,9 +42,9 @@ class MakeNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->line('The introduction to the notification.')
-            ->line('The amount you are using is ' . $this->expense)
+            ->line('The introduction to the notification.')->with('The amount you are using is ' . $this->expense)
             ->action('Notification Action', url('/'))
+            ->success('Email successfuly sending')
             ->line('Thank you for using our application!');
     }
 
